@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<location>
+<locate time='2013/02/20 15:30' loc='1' snowc='97.0' level='1' thermo='-0.4' s1='1' s3='6' s6='15' s12='31'/>
+<locate time='2013/02/20 15:30' loc='2' snowc='114.0' level='1' thermo='-1.9' s1='1' s3='3' s6='18' s12='38'/>
+<locate time='2013/02/20 15:30' loc='3' snowc='98.0' level='2' thermo='-1.1' s1='0' s3='4' s6='22' s12='33'/>
+<locate time='2013/02/20 15:30' loc='4' snowc='286.0' level='0' thermo='調整中' s1='0' s3='12' s6='17' s12='31'/>
+</location>

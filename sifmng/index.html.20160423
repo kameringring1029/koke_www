@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>長岡地域 降積雪マップ</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/snowmap/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body onload="init()">
+	<div class="jumbotron container" style="padding:30px">
+        <div style="float:left"><h2>平成26年度 長岡市川口町<br>降積雪センサーネットワーク実証実験</h2>
+			<div style="float:center">平成25年度実験ページは<a href="http://snowcap.nagaokaut.ac.jp/snowmap/h25">こちら</a></div>
+		</div>
+		<div style="float:right; font-size:14px; line-height:120%">
+			<div style="float:right;">について</div>
+		</div>
+	</div>
+    <div class="container">
+		<div style="float:left; font-size:18px;" id="datetime">読み込み中...</div>
+        <div style="float:right;">※前後します<br></div>
+    </div>
+    <div class="jumbotron container" style="padding:30px;">
+		<strong class="visible-lg">
+    		<div style="float:left;">
+	  			<img src="/snowmap/item/map.png" alt="capture" id="capture"
+		  style="width:446px;height:725px;" align="middle"></img>
+			</div>
+		</strong>
+
+		<div style="float:left; padding:10px; margin:10px; background-color:white;">
+
+      	<!-- for PC -->
+        <strong class="visible-lg">
+    	  <ul class="nav nav-tabs jumbotron" style="font-size:19px; padding:0px; margin:0px" >
+      	    <li id="button0" onClick="onclickhandler(event,0)"><a href="JavaScript:void(0)">東川口</a></li>
+      	    <li id="button1" onClick="onclickhandler(event,1)"><a href="JavaScript:void(0)">上川</a></li>
+      	    <li id="button2" onClick="onclickhandler(event,2)"><a href="JavaScript:void(0)">田麦山</a></li>
+      	    <li id="button3" onClick="onclickhandler(event,3)"><a href="JavaScript:void(0)">木沢</a></li>
+      	    <li id="button4" onClick="onclickhandler(event,4)"><a href="JavaScript:void(0)">種苧原</a></li>
+      	    <li id="button5" onClick="onclickhandler(event,5)"><a href="JavaScript:void(0)">西川口</a></li>
+    	  </ul>
+	  <div id="sens" style="font-size:20px;">地図上のピンまたは上部タブをクリックしてください</div>
+	  <div id="graphMain" style="width:600px; height:400px; clear:both; display:none;"></div>
+    	</strong>
+
+    	<!-- for Mobile -->
+    	<strong class="hidden-lg">
+    	  <ul class="nav nav-tabs"style="font-size:19px" >
+      	    <li id="button0" onClick="onclickhandler(event,0)"><a href="JavaScript:void(0)">東川口</a></li>
+      	    <li id="button1" onClick="onclickhandler(event,1)"><a href="JavaScript:void(0)">上川</a></li>
+      	    <li id="button2" onClick="onclickhandler(event,2)"><a href="JavaScript:void(0)">田麦山</a></li>
+    	  </ul>
+    	  <ul class="nav nav-tabs"style="font-size:19px" >
+      	    <li id="button3" onClick="onclickhandler(event,3)"><a href="JavaScript:void(0)">木沢</a></li>
+      	    <li id="button4" onClick="onclickhandler(event,4)"><a href="JavaScript:void(0)">種苧原</a></li>
+      	    <li id="button5" onClick="onclickhandler(event,5)"><a href="JavaScript:void(0)">西川口</a></li>
+      	  </ul>
+	  <div id="sensM" style="font-size:20px;">上部タブをクリックしてください</div>
+	  <div id="graphMainM" style="width:90%; clear:both; display:none;"></div>
+    	</strong>
+
+	<div id="zoom" align="center" style="clear:both; display:none;">サムネイル：クリックで拡大</div>
+	<div id="graphsnow" onClick="graphclick(0)" style="width:140px; height:100px; float:left;"></div>
+		<img src="/snowmap/item/toumei.png" id="coversnow" onClick="graphclick(0)" style="position:absolute; width;0px; height:0px; top:200px; left:200px;"></img>
+	<div id="graphfall" onClick="graphclick(1)" style="width:140px; height:100px; float:left;"></div>
+		<img src="/snowmap/item/toumei.png" id="coverfall" onClick="graphclick(1)" style="position:absolute; width;0px; height:0px; top:200px; left:200px;"></img>
+	<div id="graphthermo" onClick="graphclick(2)" style="width:140px; height:100px; float:left;"></div>
+		<img src="/snowmap/item/toumei.png" id="coverthermo" onClick="graphclick(2)" style="position:absolute; width;0px; height:0px; top:300px; left:300px;"></img>
+		<div style="clear:both;"></div>
+		<div id="snowlab" onClick="graphclick(0)" align="center" style="width:140px; float:left; display:none;">積雪深</div>
+		<div id="falllab" onClick="graphclick(1)" align="center" style="width:140px; float:left; display:none;">降雪深</div>
+		<div id="thermolab" onClick="graphclick(2)" align="center" style="width:140px; float:left; display:none;">気温</div>
+	<div src="/snowmap/item/toumei.png" id="coverwhite" class="jumbotron" style="position:absolute; width;100%; height:700px; top:200px; left:200px; display:none;"></div>
+	<!--<div style="clear:both;" id="output"></div>-->
+      </div>
+    </div>
+    <div class="container" style="clear:both;">
+<!--      <input type="button" id="renew" value="更新" onClick="reload()" class="btn btn-info btn-large"/>
+-->      <input type="button" value="DL(管理者のみ)" class="btn btn-info btn-large"
+			onClick="window.open('/snowmap/mapdl/redirect.html','new');"/>
+      <hr>
+      <div>(C) 2016, koke.link, All rights reserved.</div>
+      <br>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/snowmap/bootstrap/js/bootstrap.min.js"></script>
+
+  </body>
+
+
+</html>
+
+
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<script type="text/javascript">
+	var nowcont = 9;
+	var diffx = 0, diffy = 0;
+	var scmax = 0; fallmax = 0;
+	var sc = new Array(8);
+	var sctime = new Array(8);
+	var fall = new Array(8);
+	var fallsum = new Array(8);
+	var thermo = new Array(8);
+	var thermotime = new Array(8);
+	var schour = new Array(13);
+	var fallhour = new Array(13);
+	var thermohour = new Array(25);
+	var name = new Array(8);
+	var time = new Array(8);
+	var userAgent;
+	var chart = new Array(3);
+	var table = new Array(3);
+	var dataTable = new Array(3);
+	var option = new Array(3);
+	var optionb = new Array(3);
+
+
+	// Visualization API パッケージのロード
+	google.load("visualization", "1", {packages:["corechart"]});
+	// Google Visualization API ロード時のコールバック関数
+	if (navigator.userAgent.toLowerCase().indexOf('msie') > 0) {
+              $(document).ready(chartinit); // IE : Use a jQuery document ready
+	} else {
+		google.setOnLoadCallback(chartinit);
+	}
+
+	function chartinit() {
+	}
+	
+
+	//onload処理
+	function init(){
+		//UserAgent取得
+		var userAgent = window.navigator.userAgent.toLowerCase();
+		if(userAgent.indexOf('chrome') != -1){ diffx=0; diffy=0;
+		}else if(userAgent.indexOf('firefox') != -1){
+		}else if(userAgent.indexOf('msie') != -1){ diffx=0; diffy=0;
+		}
+
+		//現在時刻設定
+		times = new Date();
+		timeD = document.getElementById("datetime");
+		timeD.innerHTML = "閲覧時間："+times.getFullYear()+"/"+(times.getMonth()+1)+"/"
+					+times.getDate()+" "+times.getHours()+":"+times.getMinutes();
+ 
+		
+		//センサ情報XML読み込み
+		downloadUrl("/sif/db.xml",function(data){
+			var loc=data.getElementsByTagName("row");
+			var scrow = new Array(loc.length);
+			var sctimerow = new Array(loc.lentgh);
+			for(var i=0;i<loc.length;i++){
+				var field=loc[i].getElementsByTagName("field");
+
+				scrow[i] = parseInt(field[1].innerHTML);
+				if(scrow[i] > scmax) scmax = scrow[i];
+				sctimerow[i] = field[0].innerHTML;
+			}
+			for(var i=0;i<loc.length;i++){
+				sc[i] = scrow;
+				sctime[i] = sctimerow;
+			}	
+
+			// グラフのオプションを設定
+			optionb[0] = { title: '積雪深', fontSize:'17', hAxis:{title:'時間 [時]', format:'##', slantedText:true}, vAxis:{title:'積雪深[cm]',viewWindow:{min:0,max:scmax}}, isStacked:true, legend:{position:'none'}};
+			option[0] = { vAxis:{viewWindow:{min:0}}, isStacked:true, legend:{position:'none'}};
+		});
+
+
+	}
+
+
+
+	//地区変更時イベント処理
+	function onclickhandler(event,locnum) {
+		var hx, hy;
+		var html = document.documentElement;
+		var body = document.body;
+		var scrollLeft = (body.scrollLeft || html.scrollLeft);
+		var scrollTop = (body.scrollTop || html.scrollTop);
+		var bounds = document.getElementById("capture").getBoundingClientRect();
+		var left = bounds.left - html.clientLeft + scrollLeft;
+		var top = bounds.top - html.clientTop + scrollTop;
+		var flag = 0;
+
+
+		//地区照合
+		for(var loc=0; loc<7; loc++){
+			if(locnum == loc){
+				if(nowcont != loc){
+					//タブのアクティブ/非アクティブ化
+					document.getElementById("button"+loc).className = "active";
+					if(nowcont!=9) document.getElementById("button"+nowcont).className = "nav nav-tabs";
+
+					//センサ情報のセット
+					sensD = document.getElementById("sens");
+					sensD.innerHTML = "";
+
+
+					for(var k=0; k<=12; k++){
+						schour[k] = new Date(sctime[loc][k].replace(/-/g,"/"));
+					}
+
+					document.getElementById("coverwhite").style.display="none";
+
+					// 各種グラフの生成,積雪深を初期表示
+
+					document.getElementById("snowlab").style.display = "block";
+					document.getElementById("falllab").style.display = "block";
+					document.getElementById("thermolab").style.display = "block";
+					document.getElementById("zoom").style.display = "block";
+					document.getElementById("zoom").innerHTML="サムネイル：クリックで拡大";
+
+					graphcreate(0,loc);
+//					graphcreate(1,loc);
+//					graphcreate(2,loc);
+					document.getElementById("graphMain").style.display="block";
+							var graphD = document.getElementById("graphMain");
+ 							chart[0] = new google.visualization.LineChart(graphD);
+					chart[0].draw(dataTable[0],optionb[0]);
+					document.getElementById("graphMainM").style.display="block";
+							var graphD = document.getElementById("graphMainM");
+ 							chart[0] = new google.visualization.LineChart(graphD);
+					chart[0].draw(dataTable[0],optionb[0]);
+
+
+					nowcont = loc;
+					flag = 0;
+				}
+			}
+		}
+
+
+		return false;
+	}
+
+
+
+	// グラフの作成
+	function graphcreate(type, loc){
+		var size;
+		var label;
+		var sensdata;
+		var senssumdata;
+
+		if(type == 0){ size = 12; label='積雪深'; sensdata = sc; time = schour; id = "snow";
+//		}else if(type == 1){ size = 12; label='降雪深'; sensdata = fall; senssumdata = fallsum; time = schour; id = "fall";
+//		}else if(type == 2){ size = 24; label='気温'; sensdata = thermo; time = thermohour; id = "thermo";
+		}
+
+		// データテーブルの作成
+		var inputtable = new Array(size);
+
+		dataTable[type]= new google.visualization.DataTable();
+	    dataTable[type].addColumn('datetime','日時');
+	    dataTable[type].addColumn('number','気温');
+	    dataTable[type].addColumn('number','累計');
+
+
+		for(var k=0; k<size; k++){
+			var tablerow = new Array(3);
+			tablerow[0] = time[size-k];
+
+			// 気温マイナス＞色変えのための系列分割処理
+			if(type == 2 && sensdata[loc][size-k] < 0){
+				tablerow[1] = 0;
+				tablerow[2] = sensdata[loc][size-k];
+			// 降雪 強度＋累計
+			}else if(type == 1){
+				tablerow[1] = sensdata[loc][size-k];
+				tablerow[2] = senssumdata[loc][size-k];
+			}else{
+				tablerow[1] = sensdata[loc][size-k];
+				tablerow[2] = 0;
+			}
+
+			inputtable[k] = tablerow;
+		}
+		dataTable[type].addRows(inputtable);
+
+
+		// データテーブルとオプションを渡して、グラフを描画
+		graphD = document.getElementById("graph"+id);
+		graphD.style.display = "block";
+ 		chart[type] = new google.visualization.LineChart(graphD);
+		chart[type].draw(dataTable[type], option[type]); 
+
+		//IE用グラフクリックレイヤの設定
+		coverobj = document.getElementById("cover"+id);
+		coverobj.style.display = "block";
+			objx = graphD.offsetLeft;
+			objy = graphD.offsetTop;
+			objw = graphD.offsetWidth;
+			objh = graphD.offsetHeight;
+		coverobj.style.top=objy+'px'; coverobj.style.left=objx+'px';
+		coverobj.style.width=objw+'px'; coverobj.style.height=objh+'px';
+
+	}
+
+
+	function graphclick(type){
+		if(type == 0 || type == 1 || type == 2){
+			document.getElementById("graphMain").style.display="block";
+					var graphD = document.getElementById("graphMain");
+ 					chart[type] = new google.visualization.LineChart(graphD);
+			chart[type].draw(dataTable[type],optionb[type]);
+			document.getElementById("graphMainM").style.display="block";
+					var graphD = document.getElementById("graphMainM");
+ 					chart[type] = new google.visualization.LineChart(graphD);
+			chart[type].draw(dataTable[type],optionb[type]);
+		}else if(type == 3){
+			document.getElementById("graphMain").style.display="none";
+			document.getElementById("graphMainM").style.display="none";
+	//		window.open("graphpop.html?3-"+nowcont,"graph",
+	//			"status=0,menubar=0,location=0,width=1000,height=680,resizable=0");
+		}
+
+		return false;
+	}
+
+
+   
+   
+/*util.js
+ * GoogleMapAPIでXMLファイルを取り込むためのオープンソース
+ */
+/**
+* For version3
+* Returns an XMLHttp instance to use for asynchronous
+* downloading. This method will never throw an exception, but will
+* return NULL if the browser does not support XmlHttp for any reason.
+* @return {XMLHttpRequest|Null}
+*/
+
+function createXmlHttpRequest() {
+ try {
+   if (typeof ActiveXObject != 'undefined') {
+     return new ActiveXObject('Microsoft.XMLHTTP');
+   } else if (window["XMLHttpRequest"]) {
+  return new XMLHttpRequest();
+   }
+ } catch (e) {
+   changeStatus(e);
+ }
+ return null;
+};
+
+/**
+* This functions wraps XMLHttpRequest open/send function.
+* It lets you specify a URL and will call the callback if
+* it gets a status code of 200.
+* @param {String} url The URL to retrieve
+* @param {Function} callback The function to call once retrieved.
+*/
+
+function downloadUrl(url, callback) {
+ var status = -1;
+ var request = createXmlHttpRequest();
+
+ if (!request) {
+  return false;
+ }
+
+ request.onreadystatechange = function() {
+   if (request.readyState == 4) {
+     try {
+       status = request.status;
+     } catch (e) {
+       // Usually indicates request timed out in FF.
+     }
+     if (status == 200) {
+       callback(request.responseXML, request.status);
+       request.onreadystatechange = function() {};
+     }
+   }
+ }
+ request.open('GET', url, true);
+ try {
+   request.send(null);
+ } catch (e) {
+   changeStatus(e);
+ }
+};
+
+/**
+ * Parses the given XML string and returns the parsed document in a
+ * DOM data structure. This function will return an empty DOM node if
+ * XML parsing is not supported in this browser.
+ * @param {string} str XML string.
+ * @return {Element|Document} DOM.
+ */
+
+function xmlParse(str) {
+  if (typeof ActiveXObject != 'undefined' && typeof GetObject != 'undefined') {
+    var doc = new ActiveXObject('Microsoft.XMLDOM');
+    doc.loadXML(str);
+    return doc;
+  }
+
+  if (typeof DOMParser != 'undefined') {
+    return (new DOMParser()).parseFromString(str, 'text/xml');
+  }
+
+  return createElement('div', null);
+}
+
+
+/**
+ * Appends a JavaScript file to the page.
+ * @param {string} url
+ */
+
+function downloadScript(url) {
+  var script = document.createElement('script');
+  script.src = url;
+  document.body.appendChild(script);
+}
+
+
+</script>
+
+
+

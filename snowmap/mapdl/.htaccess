@@ -1,0 +1,10 @@
+AuthType Basic
+AuthName private_dir
+AuthUserFile /var/www/snowmap/mapdl/.htpasswd
+#AuthGroupFile /dev/null
+<Limit GET POST>
+require valid-user
+</Limit>
+
+#Redirect permanent / http://153.149.154.122/
+

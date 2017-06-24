@@ -1,0 +1,430 @@
+<?xml version="1.0"?>
+
+<resultset statement="select * from cf2_border
+" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <row>
+	<field name="time">2016-04-20 23:27:51</field>
+	<field name="twice">11775</field>
+	<field name="single">3859</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 00:00:02</field>
+	<field name="twice">12855</field>
+	<field name="single">4632</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 01:00:02</field>
+	<field name="twice">14461</field>
+	<field name="single">4899</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 02:00:02</field>
+	<field name="twice">15085</field>
+	<field name="single">5043</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 03:00:02</field>
+	<field name="twice">15593</field>
+	<field name="single">5198</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 04:00:02</field>
+	<field name="twice">16044</field>
+	<field name="single">5363</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 05:00:03</field>
+	<field name="twice">16324</field>
+	<field name="single">5505</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 06:00:02</field>
+	<field name="twice">16570</field>
+	<field name="single">5630</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 07:00:02</field>
+	<field name="twice">16895</field>
+	<field name="single">5824</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 08:00:02</field>
+	<field name="twice">17323</field>
+	<field name="single">6260</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 09:00:02</field>
+	<field name="twice">17801</field>
+	<field name="single">6713</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 10:00:02</field>
+	<field name="twice">18448</field>
+	<field name="single">6962</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 11:00:02</field>
+	<field name="twice">19064</field>
+	<field name="single">7150</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 12:00:02</field>
+	<field name="twice">19500</field>
+	<field name="single">7261</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 13:00:02</field>
+	<field name="twice">19919</field>
+	<field name="single">7362</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 14:00:02</field>
+	<field name="twice">20543</field>
+	<field name="single">7487</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 15:00:02</field>
+	<field name="twice">21314</field>
+	<field name="single">7601</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 16:00:02</field>
+	<field name="twice">21930</field>
+	<field name="single">7783</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 17:00:02</field>
+	<field name="twice">22479</field>
+	<field name="single">8150</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 18:00:02</field>
+	<field name="twice">23718</field>
+	<field name="single">8601</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 19:00:02</field>
+	<field name="twice">24897</field>
+	<field name="single">9115</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 20:00:02</field>
+	<field name="twice">25402</field>
+	<field name="single">9585</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 21:00:02</field>
+	<field name="twice">26147</field>
+	<field name="single">9869</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 22:00:02</field>
+	<field name="twice">26992</field>
+	<field name="single">10158</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-21 23:00:02</field>
+	<field name="twice">27771</field>
+	<field name="single">10800</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 00:00:02</field>
+	<field name="twice">28842</field>
+	<field name="single">11520</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 01:00:02</field>
+	<field name="twice">29682</field>
+	<field name="single">12054</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 02:00:02</field>
+	<field name="twice">30205</field>
+	<field name="single">12327</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 03:00:02</field>
+	<field name="twice">30553</field>
+	<field name="single">12461</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 04:00:02</field>
+	<field name="twice">30775</field>
+	<field name="single">12539</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 05:00:02</field>
+	<field name="twice">30945</field>
+	<field name="single">12599</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 06:00:02</field>
+	<field name="twice">31095</field>
+	<field name="single">12652</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 07:00:02</field>
+	<field name="twice">31329</field>
+	<field name="single">12767</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 08:00:02</field>
+	<field name="twice">31838</field>
+	<field name="single">13106</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 09:00:02</field>
+	<field name="twice">32291</field>
+	<field name="single">13530</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 10:00:02</field>
+	<field name="twice">32589</field>
+	<field name="single">13787</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 11:00:02</field>
+	<field name="twice">32844</field>
+	<field name="single">14020</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 12:00:02</field>
+	<field name="twice">33174</field>
+	<field name="single">14214</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 13:00:02</field>
+	<field name="twice">33589</field>
+	<field name="single">14409</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 14:00:02</field>
+	<field name="twice">34131</field>
+	<field name="single">14657</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 15:00:02</field>
+	<field name="twice">34544</field>
+	<field name="single">14804</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 16:00:03</field>
+	<field name="twice">34901</field>
+	<field name="single">14937</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 17:00:02</field>
+	<field name="twice">35272</field>
+	<field name="single">15095</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 18:00:02</field>
+	<field name="twice">35837</field>
+	<field name="single">15326</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 19:00:02</field>
+	<field name="twice">36478</field>
+	<field name="single">15696</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 20:00:02</field>
+	<field name="twice">37167</field>
+	<field name="single">16183</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 21:00:02</field>
+	<field name="twice">37859</field>
+	<field name="single">16676</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 22:00:02</field>
+	<field name="twice">38684</field>
+	<field name="single">17086</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-22 23:00:02</field>
+	<field name="twice">39577</field>
+	<field name="single">17454</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 00:00:02</field>
+	<field name="twice">40367</field>
+	<field name="single">17856</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 01:00:03</field>
+	<field name="twice">41246</field>
+	<field name="single">18439</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 02:00:02</field>
+	<field name="twice">41958</field>
+	<field name="single">18913</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 03:00:02</field>
+	<field name="twice">42444</field>
+	<field name="single">19202</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 04:00:02</field>
+	<field name="twice">42665</field>
+	<field name="single">19351</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 05:00:02</field>
+	<field name="twice">42803</field>
+	<field name="single">19438</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 06:00:02</field>
+	<field name="twice">42939</field>
+	<field name="single">19507</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 07:00:02</field>
+	<field name="twice">43136</field>
+	<field name="single">19591</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 08:00:02</field>
+	<field name="twice">43518</field>
+	<field name="single">19740</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 09:00:02</field>
+	<field name="twice">44025</field>
+	<field name="single">19938</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 10:00:02</field>
+	<field name="twice">44567</field>
+	<field name="single">20164</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 11:00:02</field>
+	<field name="twice">45012</field>
+	<field name="single">20507</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 12:00:02</field>
+	<field name="twice">45475</field>
+	<field name="single">20915</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 13:00:02</field>
+	<field name="twice">46041</field>
+	<field name="single">21327</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 14:00:02</field>
+	<field name="twice">46706</field>
+	<field name="single">21706</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 15:00:03</field>
+	<field name="twice">47312</field>
+	<field name="single">22025</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 16:00:03</field>
+	<field name="twice">47753</field>
+	<field name="single">22297</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 17:00:02</field>
+	<field name="twice">48337</field>
+	<field name="single">22553</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 18:00:02</field>
+	<field name="twice">49036</field>
+	<field name="single">22888</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 19:00:02</field>
+	<field name="twice">49618</field>
+	<field name="single">23358</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 20:00:02</field>
+	<field name="twice">50266</field>
+	<field name="single">23840</field>
+  </row>
+
+  <row>
+	<field name="time">2016-04-23 21:00:02</field>
+	<field name="twice">50887</field>
+	<field name="single">24319</field>
+  </row>
+</resultset>

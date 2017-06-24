@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>長岡市川口町 降積雪マップ</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/snowmap/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body onload="init()">
+    <div class="jumbotron container" style="padding:30px">
+        <div style="float:left"><h2>平成25年度 長岡市川口町<br>降積雪センサーネットワーク実証実験</h2></div>
+	<div style="float:right; font-size:14px; line-height:120%">
+          <div style="float:right;">一日の閲覧数 :
+                <script type="text/javascript"
+                <!--
+                document.write(" src='http://snowcap.nagaokaut.ac.jp/cgi-bin/map-counter.cgi?gif'>");
+                -->
+                </script>
+          </div><br>
+          主催：<a href="http://snowman.nagaokaut.ac.jp">長岡技術科学大学・情報ネットワーキング研究室</a><br>
+          協力：
+	  <a href="http://www.city.nagaoka.niigata.jp/shisei/annai/kwg.html">長岡市川口支所</a>、
+          <a href="http://www.kanai.co.jp">金井度量衡(株)</a>、</d><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="http://www.nalab.jp">(株)ネットワーク応用技術研究所</a>、
+          <a href="http://www.nct9.co.jp">(株)エヌ・シィ・ティ</a><br>
+          支援：<a href="http://www.soumu.go.jp/menu_news/s-news/01tsushin03_02000059.html">総務省「戦略的情報通信研究開発推進制度（SCOPE）」</a><br>
+          実験の詳細：<a href="http://snowcap.nagaokaut.ac.jp/tablet">タブレット端末を活用した除雪車運行支援ICTシステムの研究開発</a>
+	</div>
+    </div>
+    <div class="container">
+	<div style="float:left; font-size:18px;" id="datetime">読み込み中...</div>
+        <div style="float:right;">※積雪面の凹凸や地面の傾きにより、積雪量は前後します<br>
+				  ※カメラ画像は日光の影響で白飛びする場合があります</div>
+    </div>
+    <div class="jumbotron container" style="padding:30px;">
+      <strong class="visible-lg">
+    	<div style="float:left;">
+	  <img src="/snowmap/item/capture.png" alt="capture" id="capture"
+		 onClick="onclickhandler(event,9)" style="width:446px;height:725px;" align="middle"></img>
+	  <img src="/snowmap/item/redpin.png" id="now" style="position:absolute;
+		 top:200px; left:200px; width:40px; height:56px; display:none;"></img>
+	</div>
+      </strong>
+
+      <div style="float:left; padding:10px; margin:10px; background-color:white;">
+
+      	<!-- for PC -->
+        <strong class="visible-lg">
+    	  <ul class="nav nav-tabs jumbotron" style="font-size:19px; padding:0px; margin:0px" >
+      	    <li id="button0" onClick="onclickhandler(event,0)"><a href="JavaScript:void(0)">田麦山</a></li>
+      	    <li id="button1" onClick="onclickhandler(event,1)"><a href="JavaScript:void(0)">中山</a></li>
+      	    <li id="button2" onClick="onclickhandler(event,2)"><a href="JavaScript:void(0)">木沢</a></li>
+      	    <li id="button3" onClick="onclickhandler(event,3)"><a href="JavaScript:void(0)">上川</a></li>
+      	    <li id="button4" onClick="onclickhandler(event,4)"><a href="JavaScript:void(0)">東川口</a></li>
+      	    <li id="button6" onClick="onclickhandler(event,6)"><a href="JavaScript:void(0)">相川</a></li>
+    	  </ul>
+	  <div id="sens" style="font-size:20px;">地図上のピンまたは上部タブをクリックしてください</div>
+	  <div id="graphMain" style="width:600px; height:400px; clear:both; display:none;"></div>
+	  <img src="/snowmap/item/noimage.jpg" onClick="desitalzoom(event)" id="photoMain" style="width:560px; height:420px; clear:both; display:block;"></img>
+    	</strong>
+
+    	<!-- for Mobile -->
+    	<strong class="hidden-lg">
+    	  <ul class="nav nav-tabs"style="font-size:19px" >
+    	    <li id="button0" onClick="onclickhandler(event,0)"><a href="JavaScript:void(0)">田麦山</a></li>
+    	    <li id="button1" onClick="onclickhandler(event,1)"><a href="JavaScript:void(0)">中山</a></li>
+    	    <li id="button2" onClick="onclickhandler(event,2)"><a href="JavaScript:void(0)">木沢</a></li>
+    	  </ul>
+    	  <ul class="nav nav-tabs"style="font-size:19px" >
+    	    <li id="button3" onClick="onclickhandler(event,3)"><a href="JavaScript:void(0)">上川</a></li>
+  	    <li id="button4" onClick="onclickhandler(event,4)"><a href="JavaScript:void(0)">東川口</a></li>
+      	    <li id="button6" onClick="onclickhandler(event,6)"><a href="JavaScript:void(0)">相川</a></li>
+      	  </ul>
+	  <div id="graphMainM" style="width:90%; clear:both; display:none;"></div>
+	  <img src="/snowmap/item/noimage.jpg" onClick="desitalzoom(event)" id="photoMainM" style="width:90%; clear:both; display:block;"></img><br>
+    	</strong>
+
+	<div id="zoom" align="center" style="clear:both; display:none;">サムネイル：クリックで拡大</div>
+	<div id="graphsnow" onClick="graphclick(0)" style="width:140px; height:100px; float:left;"></div>
+		<img src="./item/toumei.png" id="coversnow" onClick="graphclick(0)" style="position:absolute; width;0px; height:0px; top:200px; left:200px;"></img>
+	<div id="graphfall" onClick="graphclick(1)" style="width:140px; height:100px; float:left;"></div>
+		<img src="./item/toumei.png" id="coverfall" onClick="graphclick(1)" style="position:absolute; width;0px; height:0px; top:200px; left:200px;"></img>
+	<div id="graphthermo" onClick="graphclick(2)" style="width:140px; height:100px; float:left;"></div>
+		<img src="./item/toumei.png" id="coverthermo" onClick="graphclick(2)" style="position:absolute; width;0px; height:0px; top:300px; left:300px;"></img>
+	<img src="./item/toumei.png" onClick="graphclick(3)" id="photo" style="width:140px; height:120px; float:left"></img><br>
+		<div style="clear:both;"></div>
+		<div id="snowlab" onClick="graphclick(0)" align="center" style="width:140px; float:left; display:none;">積雪深</div>
+		<div id="falllab" onClick="graphclick(1)" align="center" style="width:140px; float:left; display:none;">降雪深</div>
+		<div id="thermolab" onClick="graphclick(2)" align="center" style="width:140px; float:left; display:none;">気温</div>
+		<div id="photolab" onClick="graphclick(3)" align="center" style="width:140px; float:left; display:none;">写真</div><br><br>
+	<div src="./item/toumei.png" id="coverwhite" class="jumbotron" style="position:absolute; width;100%; height:700px; top:200px; left:200px; display:none;"></div>
+	<!--<div style="clear:both;" id="output"></div>-->
+      </div>
+    </div>
+    <div class="container" style="clear:both;">
+<!--      <input type="button" id="renew" value="更新" onClick="reload()" class="btn btn-info btn-large"/>
+-->      <input type="button" value="DL(管理者のみ)" class="btn btn-info btn-large"
+			onClick="window.open('/snowmap/mapdl/redirect.html','new');"/>
+      <hr>
+      <div style="float:right;"><a href="JavaScript:void(0)" onClick="supportBrowser()">対応ブラウザについて</a></div>
+      <div>(C) 2014, Information Networking Labs. of Nagaoka University of Technology , All rights reserved.</div>
+      <br>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/snowmap/bootstrap/js/bootstrap.min.js"></script>
+
+  </body>
+
+
+</html>
+
+
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<script type="text/javascript">
+	var nowcont = 9;
+	var diffx = 0, diffy = 0;
+	var scmax = 0; fallmax = 0;
+	var sc = new Array(8);
+	var sctime = new Array(8);
+	var fall = new Array(8);
+	var fallsum = new Array(8);
+	var thermo = new Array(8);
+	var thermotime = new Array(8);
+	var schour = new Array(13);
+	var fallhour = new Array(13);
+	var thermohour = new Array(25);
+	var name = new Array(8);
+	var time = new Array(8);
+	var photosrc = new Array("/snowmap/log/photo/loc1/photo1.jpg",
+				"/snowmap/log/photo/loc2/photo2.jpg",
+				"/snowmap/log/photo/loc3/photo3.jpg",
+				"/snowmap/log/photo/loc4/photo4.jpg",
+				"/snowmap/log/photo/loc5/photo5.jpg",
+			//	"/snowmap/log/photo/loc6/photo6.jpg",
+				"/snowmap/item/noimage.jpg",
+				"/snowmap/log/photo/loc7/photo7.jpg");
+	var photo = new Array();
+	var hxh=[0,0,0,0,0,0,0], hxl=[0,0,0,0,0,0,0],
+	    hyh=[0,0,0,0,0,0,0], hyl=[0,0,0,0,0,0,0];
+	var userAgent;
+	var chart = new Array(3);
+	var table = new Array(3);
+	var option = new Array(3);
+	var optionb = new Array(3);
+
+
+	// Visualization API パッケージのロード
+	google.load("visualization", "1", {packages:["corechart"]});
+	// Google Visualization API ロード時のコールバック関数
+
+	if (navigator.userAgent.toLowerCase().indexOf('msie') > 0) {
+              $(document).ready(chartinit); // IE : Use a jQuery document ready
+	} else {
+
+		google.setOnLoadCallback(chartinit);
+
+	}
+
+		function chartinit() {
+		}
+	
+
+	//onload処理
+	function init(){
+		//UserAgent取得
+		var userAgent = window.navigator.userAgent.toLowerCase();
+		if(userAgent.indexOf('chrome') != -1){ diffx=0; diffy=0;
+		}else if(userAgent.indexOf('firefox') != -1){// diffx=80; diffy=45;
+		}else if(userAgent.indexOf('msie') != -1){ diffx=0; diffy=0;
+		}
+
+		//現在時刻設定
+		times = new Date();
+		timeD = document.getElementById("datetime");
+		timeD.innerHTML = "閲覧時間："+times.getFullYear()+"/"+(times.getMonth()+1)+"/"
+					+times.getDate()+" "+times.getHours()+":"+times.getMinutes();
+ 
+		//観測地情報XML読み込み
+		downloadUrl("/snowmap/location.xml",function(data){
+			var loc=data.getElementsByTagName("loc");
+			for(var i=0;i<loc.length;i++){
+				name[i] = loc[i].getAttribute("name");
+				hxh[i] = parseFloat(loc[i].getAttribute("hxh")); 
+				hxl[i] = parseFloat(loc[i].getAttribute("hxl")); 
+				hyh[i] = parseFloat(loc[i].getAttribute("hyh")); 
+				hyl[i] = parseFloat(loc[i].getAttribute("hyl"));
+			}
+		});
+		
+		//センサ情報XML読み込み
+		downloadUrl("/snowmap/log/sens.xml",function(data){
+			var loc=data.getElementsByTagName("loc");
+			for(var i=0;i<loc.length;i++){
+				time[i] = loc[i].getAttribute("time");
+
+				var scrow = new Array(13);
+				var sctimerow = new Array(13);
+				scrow[0] = parseFloat(loc[i].getAttribute("sc"));
+				for(var j=1;j<=12;j++){
+					var tag = "sc"+j;
+					scrow[j] = parseFloat(loc[i].getAttribute(tag));
+					if(scrow[j] > scmax) scmax = scrow[j];
+					tag = "sctime"+j;
+					sctimerow[j] = loc[i].getAttribute(tag);
+				}
+				sc[i] = scrow;
+				sctime[i] = sctimerow;
+			
+				var fallrow = new Array(13);
+				var fallsumrow = new Array(13);
+				fallrow[0] = parseFloat(loc[i].getAttribute("fall"));
+				fallsumrow[0] = fallrow[0];
+				for(var j=1;j<=12;j++){
+					var tag = "fall"+j;
+					fallrow[j] = parseFloat(loc[i].getAttribute(tag));
+					fallsumrow[j] = fallsumrow[j-1] + fallrow[j];
+					if(fallsumrow[j] > fallmax) fallmax = fallsumrow[j];
+				}
+				fall[i] = fallrow;
+				fallsum[i] = fallsumrow;
+			
+				var thermorow = new Array(25);
+				var thermotimerow = new Array(25);
+/*		var flag=0;
+		if(i==3){
+			flag=1;
+			i=2;
+		}
+*/				thermorow[0] = parseFloat(loc[i].getAttribute("thermo"));
+				for(var j=1;j<=24;j++){
+					var tag = "thermo"+j;
+					thermorow[j] = parseFloat(loc[i].getAttribute(tag));
+//		if(flag==1){thermorow[j] = thermorow[j]*0.8+0.4;}
+					tag = "thermotime"+j;
+					thermotimerow[j] = loc[i].getAttribute(tag);
+				}
+/*		if(flag==1){
+			flag=0;
+			i=3;
+		}
+*/				thermo[i] = thermorow;
+				thermotime[i] = thermotimerow;
+
+			}
+
+			// グラフのオプションを設定
+			optionb[0] = { title: '積雪深', fontSize:'17', hAxis:{title:'時間 [時]', format:'##', slantedText:true}, vAxis:{title:'積雪深[cm]',viewWindow:{min:0,max:scmax}}, isStacked:true, legend:{position:'none'}};
+			option[0] = { vAxis:{viewWindow:{min:0}}, isStacked:true, legend:{position:'none'}};
+			optionb[1] = { title: '降雪深', fontSize:'17', hAxis:{title:'時間 [時]', format:'##', slantedText:true}, vAxis:{title:'降雪深[cm]',viewWindow:{min:0,max:(fallmax+10)},gridlined:{count:1}}, isStacked:false, legend:{position:'in'}};
+			option[1] = { vAxis:{viewWindow:{min:0,max:(fallmax+10)}}, isStacked:false, legend:{position:'none'}};
+			optionb[2] = { title: '気温', fontSize:'17', hAxis:{title:'時間 [時]', format:'##', slantedText:true}, vAxis:{title:'気温[℃]',viewWindow:{min:-10,max:15},gridlined:{count:12}}, colors:['#ff8c00','#0000ff'], isStacked:true, legend:{position:'none'}};
+			option[2] = { vAxis:{viewWindow:{min:-10,max:15}}, colors:['#ff8c00','#0000ff'], isStacked:true, legend:{position:'none'}};
+		});
+
+		//写真画像のプリロード
+		for(var i=0; i<photosrc.length; i++){
+			photo[i] = new Image();
+			photo[i].src = photosrc[i];
+		}
+
+	}
+
+
+
+	//地図画像クリック時のイベント処理
+	function onclickhandler(event,locnum) {
+		var hx, hy;
+		var html = document.documentElement;
+		var body = document.body;
+		var scrollLeft = (body.scrollLeft || html.scrollLeft);
+		var scrollTop = (body.scrollTop || html.scrollTop);
+		var bounds = document.getElementById("capture").getBoundingClientRect();
+		var left = bounds.left - html.clientLeft + scrollLeft;
+		var top = bounds.top - html.clientTop + scrollTop;
+		var flag = 0;
+
+		//座標取得、スクロール分の補正
+		if(locnum == 9){
+			if (!event) { event = window.event; }
+			if (document.all) { // for IE
+				hx = event.offsetX;
+				hy = event.offsetY;
+			} else {
+				hx = event.layerX;
+ 			hy = event.layerY;
+				hx = hx -left + diffx;
+ 				hy = hy -top + diffy;
+			}
+		}
+
+		//地図上のピンとの座標照合
+		for(var loc=0; loc<7; loc++){
+			if((hx>hxl[loc] && hx<hxh[loc] && hy>hyl[loc] && hy<hyh[loc])){
+				flag = 1;
+			}
+			if(flag == 1 || locnum == loc){
+				if(nowcont != loc){
+					//タブのアクティブ/非アクティブ化
+					document.getElementById("button"+loc).className = "active";
+					if(nowcont!=9) document.getElementById("button"+nowcont).className = "nav nav-tabs";
+
+					//センサ情報のセット
+					sensD = document.getElementById("sens");
+				//	sensD.innerHTML = "<body>"+name[loc]+"<br>"+time[loc]+
+				//				"<br>積雪深："+sc[loc]+"cm <br>降雪深 １時間：1cm，３時間：3cm，６時間：6cm，１２時間：12cm<br>気温："+thermo[loc]+"℃</body><br><br>";
+				//	sensD.innerHTML = "【"+name[loc]+"】"; //- "+time[loc];
+					sensD.innerHTML = "<br>";
+//if(loc==4)	sensD.innerHTML = "01/20更新　気温センサ故障中<br>";
+if(loc==4)	sensD.innerHTML = "02/22　システム停止中<br>";
+//	sensD.innerHTML = "2014/02/03 3～12時の間　システム障害がありました<br>";
+
+
+if(loc==0 || loc==1 || loc==2 || loc==3 || loc == 4 || loc==6){
+	if(loc==0 || loc==1 || loc==2 || loc==3 || loc == 4){
+					for(var k=1; k<=12; k++){
+						var hako = sctime[loc][k];
+						var datehour = hako.split(" ");
+						var hours = datehour[1].split(":");
+						schour[k] = hours[0];
+					}
+					schour[0] = "現在";
+					for(var k=1; k<=24; k++){
+						var hako = thermotime[loc][k];
+						var datehour = hako.split(" ");
+						var hours = datehour[1].split(":");
+						thermohour[k] = hours[0];
+					}
+					thermohour[0] = "現在";
+
+document.getElementById("coverwhite").style.display="none";
+
+					// 各種グラフの生成,積雪深を初期表示
+
+					document.getElementById("snowlab").style.display = "block";
+					document.getElementById("falllab").style.display = "block";
+					document.getElementById("thermolab").style.display = "block";
+					document.getElementById("photo").style.display = "block";
+					document.getElementById("photolab").style.display = "block";
+					document.getElementById("zoom").style.display = "block";
+					document.getElementById("zoom").innerHTML="サムネイル：クリックで拡大";
+
+					graphcreate(0,loc);
+					graphcreate(1,loc);
+					graphcreate(2,loc);
+					document.getElementById("graphMain").style.display="block";
+					document.getElementById("photoMain").style.display="none";
+							var graphD = document.getElementById("graphMain");
+ 							chart[0] = new google.visualization.ColumnChart(graphD);
+					chart[0].draw(table[0],optionb[0]);
+					document.getElementById("graphMainM").style.display="block";
+					document.getElementById("photoMainM").style.display="none";
+							var graphD = document.getElementById("graphMainM");
+ 							chart[0] = new google.visualization.ColumnChart(graphD);
+					chart[0].draw(table[0],optionb[0]);
+
+
+					// 写真のセット
+					photoD = document.getElementById("photo");
+					photoD.src = photosrc[loc]; 
+					photoD = document.getElementById("photoMain");
+					photoD.src = photosrc[loc];
+					photoD = document.getElementById("photoMainM");
+					photoD.src = photosrc[loc];
+
+	}else{
+document.getElementById("coverwhite").style.display="none"
+			//サンウッド用処理 
+					photoD = document.getElementById("photo");
+					photoD.src = photosrc[loc]; photoD.style.display = "block";
+					photoD = document.getElementById("photoMain");
+					photoD.src = photosrc[loc];
+					photoD = document.getElementById("photoMainM");
+					photoD.src = photosrc[loc];
+					document.getElementById("graphMain").style.display="none";
+					document.getElementById("photoMain").style.display="block";
+					document.getElementById("graphMainM").style.display="none";
+					document.getElementById("photoMainM").style.display="block";
+
+					document.getElementById("graphsnow").style.display="none";
+					document.getElementById("snowlab").style.display = "none";
+					document.getElementById("graphfall").style.display="none";
+					document.getElementById("falllab").style.display = "none";
+					document.getElementById("graphthermo").style.display="none";
+					document.getElementById("thermolab").style.display = "none";
+					document.getElementById("photo").style.display="none";
+					document.getElementById("photolab").style.display="none";
+					document.getElementById("zoom").style.display="block";
+					document.getElementById("zoom").innerHTML="カメラ専用設置箇所<br>写真をクリック ＞ ズームウインドウが表示";
+
+	}
+
+
+}else{
+	sensD.innerHTML = "【"+name[loc]+" 】- "+"準備中";
+		coverobj = document.getElementById("coverwhite");
+		graphD = document.getElementById("graphMain");
+			objx = graphD.offsetLeft;
+			objy = graphD.offsetTop;
+			objw = graphD.offsetWidth;
+			objh = graphD.offsetHeight;
+		coverobj.style.top=objy+'px'; coverobj.style.left=objx+'px';
+		coverobj.style.width=objw+20+'px'; coverobj.style.height=objh+200+'px';
+		coverobj.style.display="block";
+}
+					// 現在ピンの表示変更
+					nowD = document.getElementById("now");
+					nowD.style.left = hxh[loc]+left-35+'px'; nowD.style.top = hyh[loc]+top-45+'px';
+					nowD.style.display = "block";
+
+					nowcont = loc;
+					flag = 0;
+				}
+			}
+		}
+
+		//現在座標表示
+//		pointD = document.getElementById("output");
+//		pointD.innerHTML = "boundx:"+(hx-left)+"boundy:"+(hy-top)+" x:"+hx+",y:"+hy;
+
+		return false;
+	}
+
+
+
+	// グラフの作成
+	function graphcreate(type, loc){
+		var size;
+		var label;
+		var sensdata;
+		var senssumdata;
+
+		if(type == 0){ size = 12; label='積雪深'; sensdata = sc; time = schour; id = "snow";
+		}else if(type == 1){ size = 12; label='降雪深'; sensdata = fall; senssumdata = fallsum; time = schour; id = "fall";
+		}else if(type == 2){ size = 24; label='気温'; sensdata = thermo; time = thermohour; id = "thermo";
+		}
+
+		// データテーブルの作成
+		var datatable = new Array(size+2);
+			datatable[0] = ['時間',label,label];
+			if(type == 1) datatable[0] = ['時間','１時間毎','１２時間累計'];
+		for(var k=0; k<=size; k++){
+			var tablerow = new Array(3);
+			tablerow[0] = time[size-k];
+
+			// 気温マイナス＞色変えのための系列分割処理
+			if(type == 2 && sensdata[loc][size-k] < 0){
+				tablerow[1] = 0;
+				tablerow[2] = sensdata[loc][size-k];
+			// 降雪 強度＋累計
+			}else if(type == 1){
+				tablerow[1] = sensdata[loc][size-k];
+				tablerow[2] = senssumdata[loc][size-k];
+			}else{
+				tablerow[1] = sensdata[loc][size-k];
+				tablerow[2] = 0;
+			}
+
+			datatable[k+1] = tablerow;
+		}
+		table[type] = google.visualization.arrayToDataTable(datatable);
+
+		// データテーブルとオプションを渡して、グラフを描画
+		graphD = document.getElementById("graph"+id);
+		graphD.style.display = "block";
+ 		chart[type] = new google.visualization.ColumnChart(graphD);
+		chart[type].draw(table[type], option[type]); 
+
+		//IE用グラフクリックレイヤの設定
+		coverobj = document.getElementById("cover"+id);
+		coverobj.style.display = "block";
+			objx = graphD.offsetLeft;
+			objy = graphD.offsetTop;
+			objw = graphD.offsetWidth;
+			objh = graphD.offsetHeight;
+		coverobj.style.top=objy+'px'; coverobj.style.left=objx+'px';
+		coverobj.style.width=objw+'px'; coverobj.style.height=objh+'px';
+
+	}
+
+
+	function graphclick(type){
+		if(type == 0 || type == 1 || type == 2){
+			document.getElementById("graphMain").style.display="block";
+			document.getElementById("photoMain").style.display="none";
+					var graphD = document.getElementById("graphMain");
+ 					chart[type] = new google.visualization.ColumnChart(graphD);
+			chart[type].draw(table[type],optionb[type]);
+			document.getElementById("graphMainM").style.display="block";
+			document.getElementById("photoMainM").style.display="none";
+					var graphD = document.getElementById("graphMainM");
+ 					chart[type] = new google.visualization.ColumnChart(graphD);
+			chart[type].draw(table[type],optionb[type]);
+		}else if(type == 3){
+			document.getElementById("graphMain").style.display="none";
+			document.getElementById("photoMain").style.display="block";
+			document.getElementById("graphMainM").style.display="none";
+			document.getElementById("photoMainM").style.display="block";
+	//		window.open("graphpop.html?3-"+nowcont,"graph",
+	//			"status=0,menubar=0,location=0,width=1000,height=680,resizable=0");
+		}
+
+		return false;
+	}
+
+
+	//デジタルズームイベント処理
+	function desitalzoom(event) {
+	
+		if(nowcont == 6){
+			var hx, hy;
+			var html = document.documentElement;
+			var body = document.body;
+			var scrollLeft = (body.scrollLeft || html.scrollLeft);
+			var scrollTop = (body.scrollTop || html.scrollTop);
+			var bounds = document.getElementById("photoMain").getBoundingClientRect();
+			var left = bounds.left - html.clientLeft + scrollLeft;
+			var top = bounds.top - html.clientTop + scrollTop;
+			var flag = 0;
+			if (!event) { event = window.event; }
+			if (document.all) { // for IE
+				hx = event.offsetX;
+				hy = event.offsetY;
+			} else {
+				hx = event.layerX;
+ 			hy = event.layerY;
+				hx = hx -left + diffx;
+ 				hy = hy -top + diffy;
+			}
+	
+			hy=hy*7.56; hx=hx*6.62;
+			window.open('graphpop.html?'+nowcont+'&'+hy+'&'+hx,"graph",
+				"status=0,menubar=0,location=0,width=680,height=510,resizable=0");
+		}
+	}
+
+	function supportBrowser(){
+		window.open("supportBrowser.html","ブラウザサポート","width=600,height=450,menubar=no,toolbar=no");
+	}
+
+	function supportBrowser(){
+		window.open("supportBrowser.html","ブラウザサポート","width=600,height=450,menubar=no,toolbar=no");
+	}
+   
+   
+/*util.js
+ * GoogleMapAPIでXMLファイルを取り込むためのオープンソース
+ */
+/**
+* For version3
+* Returns an XMLHttp instance to use for asynchronous
+* downloading. This method will never throw an exception, but will
+* return NULL if the browser does not support XmlHttp for any reason.
+* @return {XMLHttpRequest|Null}
+*/
+
+function createXmlHttpRequest() {
+ try {
+   if (typeof ActiveXObject != 'undefined') {
+     return new ActiveXObject('Microsoft.XMLHTTP');
+   } else if (window["XMLHttpRequest"]) {
+  return new XMLHttpRequest();
+   }
+ } catch (e) {
+   changeStatus(e);
+ }
+ return null;
+};
+
+/**
+* This functions wraps XMLHttpRequest open/send function.
+* It lets you specify a URL and will call the callback if
+* it gets a status code of 200.
+* @param {String} url The URL to retrieve
+* @param {Function} callback The function to call once retrieved.
+*/
+
+function downloadUrl(url, callback) {
+ var status = -1;
+ var request = createXmlHttpRequest();
+
+ if (!request) {
+  return false;
+ }
+
+ request.onreadystatechange = function() {
+   if (request.readyState == 4) {
+     try {
+       status = request.status;
+     } catch (e) {
+       // Usually indicates request timed out in FF.
+     }
+     if (status == 200) {
+       callback(request.responseXML, request.status);
+       request.onreadystatechange = function() {};
+     }
+   }
+ }
+ request.open('GET', url, true);
+ try {
+   request.send(null);
+ } catch (e) {
+   changeStatus(e);
+ }
+};
+
+/**
+ * Parses the given XML string and returns the parsed document in a
+ * DOM data structure. This function will return an empty DOM node if
+ * XML parsing is not supported in this browser.
+ * @param {string} str XML string.
+ * @return {Element|Document} DOM.
+ */
+
+function xmlParse(str) {
+  if (typeof ActiveXObject != 'undefined' && typeof GetObject != 'undefined') {
+    var doc = new ActiveXObject('Microsoft.XMLDOM');
+    doc.loadXML(str);
+    return doc;
+  }
+
+  if (typeof DOMParser != 'undefined') {
+    return (new DOMParser()).parseFromString(str, 'text/xml');
+  }
+
+  return createElement('div', null);
+}
+
+
+/**
+ * Appends a JavaScript file to the page.
+ * @param {string} url
+ */
+
+function downloadScript(url) {
+  var script = document.createElement('script');
+  script.src = url;
+  document.body.appendChild(script);
+}
+
+
+</script>
+
+
+

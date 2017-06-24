@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locs>
+    <loc code="01" name="東川口（川口支所）" hxh="200" hxl="175" hyh="320" hyl="285"/>
+    <loc code="02" name="上川（旧泉水小学校）" hxh="130" hxl="105" hyh="150" hyl="115"/>
+    <loc code="03" name="田麦山" hxh="250" hxl="225" hyh="710" hyl="675"/>
+    <loc code="04" name="木沢（やまぼうし）" hxh="350" hxl="325" hyh="60" hyl="25"/>
+    <loc code="05" name="種苧原" hxh="100" hxl="75" hyh="655" hyl="625"/>
+    <loc code="06" name="西川口（保育園）" hxh="170" hxl="145" hyh="425" hyl="390"/>
+    <loc code="07" name="相川（サンウッド）" hxh="135" hxl="110" hyh="75" hyl="40"/>
+    <loc code="08" name="TEST" hxh="25" hxl="0" hyh="25" hyl="0"/>
+</locs>
+

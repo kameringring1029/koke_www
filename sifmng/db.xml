@@ -1,0 +1,732 @@
+<?xml version="1.0"?>
+
+<resultset statement="select * from cf3
+" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <row>
+	<field name="time">2016-06-20 22:55:37</field>
+	<field name="point">2570</field>
+	<field name="item">0</field>
+	<field name="border_double">5053</field>
+	<field name="border_single">2398</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-21 00:24:06</field>
+	<field name="point">5037</field>
+	<field name="item">0</field>
+	<field name="border_double">5943</field>
+	<field name="border_single">2472</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-21 22:08:45</field>
+	<field name="point">9954</field>
+	<field name="item">0</field>
+	<field name="border_double">12651</field>
+	<field name="border_single">6453</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-21 22:35:00</field>
+	<field name="point">9954</field>
+	<field name="item">0</field>
+	<field name="border_double">13496</field>
+	<field name="border_single">6878</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-21 23:35:00</field>
+	<field name="point">9954</field>
+	<field name="item">0</field>
+	<field name="border_double">14387</field>
+	<field name="border_single">7192</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 00:03:40</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">14844</field>
+	<field name="border_single">7349</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 01:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">15174</field>
+	<field name="border_single">7447</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 02:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">15462</field>
+	<field name="border_single">7514</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 03:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">15698</field>
+	<field name="border_single">7560</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 04:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">15845</field>
+	<field name="border_single">7595</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 05:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">15982</field>
+	<field name="border_single">7635</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 06:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">16199</field>
+	<field name="border_single">7735</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 07:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">16621</field>
+	<field name="border_single">8101</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 08:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">17001</field>
+	<field name="border_single">8547</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 09:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">17186</field>
+	<field name="border_single">8794</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 10:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">17348</field>
+	<field name="border_single">9002</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 11:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">17509</field>
+	<field name="border_single">9188</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 12:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">17723</field>
+	<field name="border_single">9384</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 13:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">18169</field>
+	<field name="border_single">9588</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 14:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">18552</field>
+	<field name="border_single">9691</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 15:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">18894</field>
+	<field name="border_single">9768</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 16:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">19253</field>
+	<field name="border_single">9846</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 17:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">19549</field>
+	<field name="border_single">9943</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 18:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">19851</field>
+	<field name="border_single">10080</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 19:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">20186</field>
+	<field name="border_single">10346</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 20:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">20762</field>
+	<field name="border_single">10763</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 21:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">21566</field>
+	<field name="border_single">11163</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 22:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">22136</field>
+	<field name="border_single">11586</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-22 23:35:00</field>
+	<field name="point">12518</field>
+	<field name="item">0</field>
+	<field name="border_double">22683</field>
+	<field name="border_single">11947</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 00:56:58</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">23500</field>
+	<field name="border_single">12172</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 01:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">24227</field>
+	<field name="border_single">12313</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 02:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">24530</field>
+	<field name="border_single">12393</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 03:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">24687</field>
+	<field name="border_single">12446</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 04:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">24798</field>
+	<field name="border_single">12481</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 05:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">24881</field>
+	<field name="border_single">12517</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 06:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">25009</field>
+	<field name="border_single">12585</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 07:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">25192</field>
+	<field name="border_single">12799</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 08:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">25476</field>
+	<field name="border_single">13194</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 09:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">25720</field>
+	<field name="border_single">13433</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 10:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">25963</field>
+	<field name="border_single">13643</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 11:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">26187</field>
+	<field name="border_single">13833</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 12:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">26497</field>
+	<field name="border_single">14054</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 13:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">26832</field>
+	<field name="border_single">14311</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 14:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">27071</field>
+	<field name="border_single">14452</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 15:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">27273</field>
+	<field name="border_single">14554</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 16:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">27469</field>
+	<field name="border_single">14656</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 17:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">27718</field>
+	<field name="border_single">14776</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-23 18:35:00</field>
+	<field name="point">14892</field>
+	<field name="item">0</field>
+	<field name="border_double">28043</field>
+	<field name="border_single">14911</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 00:15:30</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">31117</field>
+	<field name="border_single">16837</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 01:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">31619</field>
+	<field name="border_single">17039</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 02:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">31888</field>
+	<field name="border_single">17149</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 03:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">32030</field>
+	<field name="border_single">17213</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 04:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">32117</field>
+	<field name="border_single">17252</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 05:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">32190</field>
+	<field name="border_single">17287</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 06:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">32303</field>
+	<field name="border_single">17349</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 07:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">32558</field>
+	<field name="border_single">17512</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 08:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">32889</field>
+	<field name="border_single">17772</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 09:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">33131</field>
+	<field name="border_single">17965</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 10:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">33407</field>
+	<field name="border_single">18152</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 11:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">33661</field>
+	<field name="border_single">18337</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 12:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">33928</field>
+	<field name="border_single">18557</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 13:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">34264</field>
+	<field name="border_single">18835</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 14:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">34501</field>
+	<field name="border_single">19016</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 15:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">34702</field>
+	<field name="border_single">19173</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 16:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">34933</field>
+	<field name="border_single">19323</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 17:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">35207</field>
+	<field name="border_single">19478</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 18:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">35525</field>
+	<field name="border_single">19639</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 19:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">35943</field>
+	<field name="border_single">19805</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 20:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">36393</field>
+	<field name="border_single">19979</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 21:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">36852</field>
+	<field name="border_single">20203</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 22:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">37310</field>
+	<field name="border_single">20483</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-24 23:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">37786</field>
+	<field name="border_single">20831</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 00:07:59</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">38356</field>
+	<field name="border_single">21256</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 01:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">38898</field>
+	<field name="border_single">21573</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 02:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">39212</field>
+	<field name="border_single">21732</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 03:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">39402</field>
+	<field name="border_single">21837</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 04:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">39513</field>
+	<field name="border_single">21899</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 05:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">39601</field>
+	<field name="border_single">21949</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 06:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">39714</field>
+	<field name="border_single">22007</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 07:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">39876</field>
+	<field name="border_single">22113</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 08:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">40129</field>
+	<field name="border_single">22265</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 09:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">40419</field>
+	<field name="border_single">22440</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 10:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">40819</field>
+	<field name="border_single">22644</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 11:35:00</field>
+	<field name="point">22375</field>
+	<field name="item">0</field>
+	<field name="border_double">41262</field>
+	<field name="border_single">22902</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 12:48:04</field>
+	<field name="point">27563</field>
+	<field name="item">0</field>
+	<field name="border_double">41714</field>
+	<field name="border_single">23189</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 13:35:00</field>
+	<field name="point">27563</field>
+	<field name="item">0</field>
+	<field name="border_double">42063</field>
+	<field name="border_single">23514</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 14:22:58</field>
+	<field name="point">27563</field>
+	<field name="item">0</field>
+	<field name="border_double">42400</field>
+	<field name="border_single">23808</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 15:35:00</field>
+	<field name="point">27563</field>
+	<field name="item">0</field>
+	<field name="border_double">42739</field>
+	<field name="border_single">24043</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 16:35:00</field>
+	<field name="point">27563</field>
+	<field name="item">0</field>
+	<field name="border_double">43122</field>
+	<field name="border_single">24238</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 17:35:00</field>
+	<field name="point">27563</field>
+	<field name="item">0</field>
+	<field name="border_double">43525</field>
+	<field name="border_single">24417</field>
+  </row>
+
+  <row>
+	<field name="time">2016-06-25 18:35:00</field>
+	<field name="point">27563</field>
+	<field name="item">0</field>
+	<field name="border_double">43939</field>
+	<field name="border_single">24588</field>
+  </row>
+</resultset>

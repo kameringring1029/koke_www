@@ -1,0 +1,18 @@
+
+lab{
+width:140px; float:left; display:none;
+text-align:center;
+}
+sam{
+width:140px; height:100px; float:left;
+}
+img.sam{
+width:140px; height:100px; float:left;
+}
+img.cover{
+position:absolute; width;0px; height:0px; top:200px; left:200px;
+}
+coverwhite{
+ background-color:white; position:absolute; width;550px; height:700px; top:200px; left:200px; display:none;
+}
+

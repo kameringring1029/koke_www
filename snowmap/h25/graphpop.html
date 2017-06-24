@@ -1,0 +1,39 @@
+<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+
+    <title>graph-長岡市 降積雪マップ</title>
+  </head>
+
+  <body bgcolor="whitesmoke" onload="init()">
+
+<div style="position:relative; width:672px; height:504px; overflow:hidden;"><img src="/snowmap/item/noimage.jpg" id="photo" style="position:absolute; width:4032px; height:3024px; left:-600px; top:-600px;"></img></div> 
+
+  </body>
+</html>
+
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<script type="text/javascript">
+<!--
+	//onload処理
+	function init(){
+		var args = window.location.search.substring(1).split('&');
+		var locnum = args[0];
+		locnum ++;
+		var top = args[1]; top -= 504/2;
+		var left = args[2]; //left -= 680/2;
+		document.getElementById("photo").src='/snowmap/log/photo/loc'+locnum+'/photo'+locnum+'.jpg';
+		document.getElementById("photo").style.top='-'+top+'px';
+		document.getElementById("photo").style.left='-'+left+'px';
+		return false;
+	}
+-->
+</script>
+
